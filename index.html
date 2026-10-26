@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>百合写真集 · 相册与备忘录</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>百合写真集</h1>
+      <span class="sub">相册 · 备忘录</span>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-view="gallery">相册</button>
+      <button class="tab" data-view="memo">备忘录</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- 相册 -->
+    <section id="view-gallery" class="view active">
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+      <button id="loadMore" class="load-more" hidden>加载更多</button>
+      <p class="empty" id="empty" hidden>这个分类下还没有照片</p>
+    </section>
+
+    <!-- 备忘录 -->
+    <section id="view-memo" class="view">
+      <div class="memo-composer">
+        <textarea id="memoInput" placeholder="写点什么……（Ctrl + Enter 保存）"></textarea>
+        <button id="memoAdd">保存备忘录</button>
+      </div>
+      <ul class="memo-list" id="memoList"></ul>
+      <p class="empty" id="memoEmpty">还没有备忘录，写下第一条吧。</p>
+    </section>
+  </main>
+
+  <!-- 灯箱 -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="关闭">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="上一张">‹</button>
+    <img id="lbImg" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="下一张">›</button>
+    <div class="lb-caption" id="lbCaption"></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
