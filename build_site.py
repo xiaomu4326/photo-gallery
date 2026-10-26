@@ -6,7 +6,7 @@ import json
 import shutil
 
 SRC = r"F:\文档\pictures\百合の写真"
-DST_ROOT = r"C:\Users\Administrator\Desktop\photo-gallery"
+DST_ROOT = r"F:\photo-gallery"
 DST_PHOTOS = os.path.join(DST_ROOT, "photos")
 
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"}

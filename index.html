@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>百合写真集 · 相册与备忘录</title>
+  <title>OumiShiori's Website</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <h1>百合写真集</h1>
-      <span class="sub">相册 · 备忘录</span>
+      <h1>OumiShiori's Website</h1>
+      <span class="sub">相册 · 视频 · 备忘录</span>
     </div>
     <nav class="tabs">
       <button class="tab active" data-view="gallery">相册</button>
+      <button class="tab" data-view="video">视频</button>
       <button class="tab" data-view="memo">备忘录</button>
     </nav>
   </header>
@@ -27,6 +28,13 @@
       <p class="empty" id="empty" hidden>这个分类下还没有照片</p>
     </section>
 
+    <!-- 视频 -->
+    <section id="view-video" class="view">
+      <div class="filters" id="videoFilters"></div>
+      <div class="video-grid" id="videoGrid"></div>
+      <p class="empty" id="videoEmpty" hidden>这个分类下还没有视频</p>
+    </section>
+
     <!-- 备忘录 -->
     <section id="view-memo" class="view">
       <div class="memo-composer">
@@ -38,6 +46,15 @@
     </section>
   </main>
 
+  <!-- 视频播放器 -->
+  <div class="player" id="player" hidden>
+    <button class="lb-close" id="pvClose" aria-label="关闭">×</button>
+    <button class="lb-nav lb-prev" id="pvPrev" aria-label="上一个">‹</button>
+    <video id="pvVideo" controls playsinline preload="metadata"></video>
+    <button class="lb-nav lb-next" id="pvNext" aria-label="下一个">›</button>
+    <div class="lb-caption" id="pvCaption"></div>
+  </div>
+
   <!-- 灯箱 -->
   <div class="lightbox" id="lightbox" hidden>
     <button class="lb-close" id="lbClose" aria-label="关闭">×</button>
@@ -48,6 +65,7 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="videos.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
